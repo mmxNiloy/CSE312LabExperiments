@@ -40,7 +40,7 @@ public class ElectionVoteCounter {
     public void printResults() {
         System.out.println("Number\t\tCandidate\t\tReceived votes\n");
         for(int i = 1 ; i < 6 ; i++) {
-            System.out.printf("%d.\t\t\t%s\t\t\t\t\t%d\n", i, candidates[i - 1], count[i]);
+            System.out.printf("%d.\t\t\t%s\t\t\t\t\t%d\n", i, candidates[i - 1].getName(), count[i]);
         }
         System.out.println("-\t\tSpoilt ballot\t\t\t" + count[0]);
     }
