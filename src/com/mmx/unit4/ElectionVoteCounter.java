@@ -3,22 +3,18 @@ package com.mmx.unit4;
 import java.util.Scanner;
 
 public class ElectionVoteCounter {
-    public ElectionVoteCounter(String[] candidates) {
+    public ElectionVoteCounter(Candidate[] candidates) {
         count = new int[6];
         this.candidates = candidates;
     }
 
     public ElectionVoteCounter() {
         count = new int[6];
-        candidates = new String[]{"Candidate A", "Candidate B", "Candidate C", "Candidate D", "Candidate E"};
-    }
-
-    public int[] getCount() {
-        return count;
-    }
-
-    public String[] getCandidates() {
-        return candidates;
+        candidates = new Candidate[5];
+        String[] names = {"Candidate A", "Candidate B", "Candidate C", "Candidate D", "Candidate E"};
+        for(int i = 0 ; i < 5 ; i++) {
+            candidates[i] = new Candidate(names[i], i + 1);
+        }
     }
 
     public void countVotes() {
@@ -37,7 +33,7 @@ public class ElectionVoteCounter {
         }
     }
 
-    public void setCandidates(String[] candidates) {
+    public void setCandidates(Candidate[] candidates) {
         this.candidates = candidates;
     }
 
@@ -50,5 +46,5 @@ public class ElectionVoteCounter {
     }
 
     private int[] count;
-    private String[] candidates;
+    private Candidate[] candidates;
 }

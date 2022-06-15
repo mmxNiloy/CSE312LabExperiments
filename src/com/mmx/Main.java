@@ -2,6 +2,7 @@ package com.mmx;
 
 import com.mmx.unit1.Primitives;
 import com.mmx.unit2.*;
+import com.mmx.unit4.Candidate;
 import com.mmx.unit4.ElectionVoteCounter;
 import com.mmx.unit4.QnABot;
 
@@ -32,9 +33,20 @@ public class Main {
         evc.countVotes();
         evc.printResults();*/
 
+        /*
         QnABot bot = new QnABot();
         bot.run();
+        */
 
+        String[] names = {"Candidate A", "Candidate B", "Candidate C", "Candidate D", "Candidate E"};
+        Candidate[] candidates = new Candidate[5];
+        for(int i = 0 ; i < 5 ; i++) {
+            candidates[i] = new Candidate(names[i], i + 1);
+        }
+
+        ElectionVoteCounter evc = new ElectionVoteCounter();
+        evc.setCandidates(candidates);
+        evc.countVotes();
     }
 }
 
