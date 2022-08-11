@@ -11,6 +11,7 @@ public class OutputFrame extends JFrame {
 
     public OutputFrame() {
         super("Result");
+
         setLocation(64, 64);
         setSize(720, 512);
         setVisible(false);
