@@ -3,8 +3,6 @@ package form;
 import model.MyThread;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainForm {
     private JPanel mainPanel;
@@ -16,9 +14,7 @@ public class MainForm {
     private JLabel lblC;
 
     public MainForm(JFrame parent) {
-        exitButton.addActionListener(e -> {
-            parent.dispose();
-        });
+        exitButton.addActionListener(e -> parent.dispose());
 
         calculateButton.addActionListener(e -> {
             String message = taInput.getText().trim();
