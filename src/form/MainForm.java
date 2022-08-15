@@ -5,7 +5,6 @@ import model.Department;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.TreePath;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -28,12 +27,13 @@ public class MainForm {
 
         addDepartmentButton.addActionListener(e -> {
             // [Dept, Fac]
-            String[] inputs = new String[2];
+            String[] inputs;
 
             AddDeptModal dialog = new AddDeptModal();
             dialog.pack();
-            dialog.setStorage(inputs);
             dialog.setVisible(true);
+            inputs = dialog.getValues();
+
 
             System.out.println(Arrays.toString(inputs));
             boolean flag = academy.agreeUpon(inputs[1], inputs[0]);
@@ -52,7 +52,7 @@ public class MainForm {
 
             int voteCount = 0;
             int totalMemberCount = academy.getTotalMemberCountOf(inputs[1]);
-            String memCntStr = "0";
+            String memCntStr;
 
             VoteModal vDialog = new VoteModal(inputs[0], totalMemberCount);
             vDialog.pack();

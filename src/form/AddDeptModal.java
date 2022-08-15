@@ -12,9 +12,10 @@ public class AddDeptModal extends JDialog {
     private JButton buttonCancel;
     private JTextField tfDept;
     private JComboBox<String> cbFaculty;
-    private String[] storage;
+    private final String[] values;
 
     public AddDeptModal() {
+        values = new String[2];
         setContentPane(contentPane);
         setModal(true);
         setLocation(64, 64);
@@ -53,9 +54,8 @@ public class AddDeptModal extends JDialog {
 
     private void onOK() {
         // add your code here
-        if(storage == null) storage = new String[2];
-        storage[0] = tfDept.getText().trim();
-        storage[1] = Objects.requireNonNull(cbFaculty.getSelectedItem()).toString().trim();
+        values[0] = tfDept.getText().trim();
+        values[1] = Objects.requireNonNull(cbFaculty.getSelectedItem()).toString().trim();
         dispose();
     }
 
@@ -64,7 +64,7 @@ public class AddDeptModal extends JDialog {
         dispose();
     }
 
-    public void setStorage(String[] storage) {
-        this.storage = storage;
+    public String[] getValues() {
+        return values;
     }
 }

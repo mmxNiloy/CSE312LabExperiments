@@ -10,7 +10,6 @@ public class VoteModal extends JDialog {
     private JLabel lblName;
     private JTextField tfAgreed;
     private JLabel lblTotal;
-    private String storage;
 
     public VoteModal(String name, int totalMemCnt) {
         setContentPane(contentPane);
@@ -43,17 +42,12 @@ public class VoteModal extends JDialog {
 
     private void onOK() {
         // add your code here
-        storage = tfAgreed.getText().trim();
         dispose();
     }
 
     private void onCancel() {
         // add your code here if necessary
         dispose();
-    }
-
-    public void setStorage(String storage) {
-        this.storage = storage;
     }
 
     public String getCount() {
